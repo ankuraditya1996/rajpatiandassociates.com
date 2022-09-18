@@ -19,6 +19,10 @@
 
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+<!--Toster CDN-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" > 
+
 </head>
 
 <body class="hidden-bar-wrapper">
@@ -47,21 +51,61 @@
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
 
 <script src="{{ asset('frontend/js/jquery.js') }}"></script>
-<script src="{{ asset('frontend/js/popper.min.js') }}"></script>
-<script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.fancybox.js') }}"></script>
-<script src="{{ asset('frontend/js/appear.js') }}"></script>
-<script src="{{ asset('frontend/js/parallax.min.js') }}"></script>
-<script src="{{ asset('frontend/js/tilt.jquery.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.paroller.min.js') }}"></script>
-<script src="{{ asset('frontend/js/owl.js') }}"></script>
-<script src="{{ asset('frontend/js/wow.js') }}"></script>
-<script src="{{ asset('frontend/js/nav-tool.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery-ui.js') }}"></script>
-<script src="{{ asset('frontend/js/script.js') }}"></script>
 
+<script src="{{ asset('frontend/js/popper.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/jquery.fancybox.js') }}"></script>
+
+<script src="{{ asset('frontend/js/appear.js') }}"></script>
+
+<script src="{{ asset('frontend/js/parallax.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/tilt.jquery.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/jquery.paroller.min.js') }}"></script>
+
+<script src="{{ asset('frontend/js/owl.js') }}"></script>
+
+<script src="{{ asset('frontend/js/wow.js') }}"></script>
+
+<script src="{{ asset('frontend/js/validate.js') }}"></script>
+
+<script src="{{ asset('frontend/js/nav-tool.js') }}"></script>
+
+<script src="{{ asset('frontend/js/jquery-ui.js') }}"></script>
+
+<script src="{{ asset('frontend/js/script.js') }}"></script>
 </body>
+
+<!--Toster Js-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+	<script>
+	 @if(Session::has('message'))
+	 var type = "{{ Session::get('alert-type','info') }}"
+	 switch(type){
+	    case 'info':
+	    toastr.info(" {{ Session::get('message') }} ");
+	    break;
+
+	    case 'success':
+	    toastr.success(" {{ Session::get('message') }} ");
+	    break;
+
+	    case 'warning':
+	    toastr.warning(" {{ Session::get('message') }} ");
+	    break;
+
+	    case 'error':
+	    toastr.error(" {{ Session::get('message') }} ");
+	    break; 
+	 }
+	 @endif 
+	</script>
 
 
 </html>

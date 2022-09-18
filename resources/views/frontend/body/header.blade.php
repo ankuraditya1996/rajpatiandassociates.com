@@ -4,7 +4,7 @@
     <div class="auto-container clearfix">
       <div class="pull-left logo-box">
         <div class="logo">
-            <a href="index.html">
+            <a href="{{ url('/') }}">
                 <img src="{{ asset('frontend/images/logo-3-01.png') }}" alt="" title="">
             </a>
         </div>
@@ -26,43 +26,43 @@
           </div>
           <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
             <ul class="navigation clearfix">
-              <li class="current dropdown"><a href="index.html" onclick="window.location.href=this">Home</a></li>
-              <li class="dropdown"><a href="about.html" onclick="window.location.href=this">What We Do?</a>  
+              <li class="current dropdown"><a href="{{ url('/') }}" onclick="window.location.href=this">Home</a></li>
+              <li class="dropdown"><a href="{{ url('/About-Us') }}" onclick="window.location.href=this">What We Do?</a>  
                 <ul>
-                    <li><a href="matrimonial.html">Divorce & Matrimonial Matter</a></li>
-                    <li><a href="criminal.html">Criminal Matter</a></li>
-                    <li><a href="service-law.html">Service Matter</a></li>
-                    <li><a href="civil.html">Civil Matter</a></li>
-                    <li><a href="property.html">Property Dispute Matter</a></li>
+                    <li><a href="{{ url('/Divorce-Matrimonial-Matter') }}">Divorce & Matrimonial Matter</a></li>
+                    <li><a href="{{ url('/Criminal-Matter') }}">Criminal Matter</a></li>
+                    <li><a href="{{ url('/Service-Matter') }}">Service Matter</a></li>
+                    <li><a href="{{ url('/Civil-Matter') }}">Civil Matter</a></li>
+                    <li><a href="{{ url('/Property-Law') }}">Property Dispute Matter</a></li>
                 </ul>
               </li>
 
-              <li class="dropdown"><a href="ourteampage.html" onclick="window.location.href=this">Our Team</a>
+              <li class="dropdown"><a href="{{ url('/Our-Team-All') }}" onclick="window.location.href=this">Our Team</a>
                 <ul>
-                  <li><a href="partner.html">Partner </a></li>
-                  <li><a href="advocate.html">Associates/ Our Experts Advocate </a></li>
-                  <li><a href="administration.html">Human Resource & Administration </a></li>
-                  <li><a href="assistant.html">Office Assistant </a></li>
+                  <li><a href="{{ url('/TRUSTED-PARTNERS') }}">Partner </a></li>
+                  <li><a href="{{ url('/Our-Team') }}">Associates/ Our Experts Advocate </a></li>
+                  <li><a href="{{ url('/HR-Administration') }}">Human Resource & Administration </a></li>
+                  <li><a href="{{ url('/Office-Assistant') }}">Office Assistant </a></li>
                 </ul>
               </li>
 				
-				<li class="dropdown"><a href="careers.html" onclick="window.location.href=this">Careers</a>
+				<li class="dropdown"><a href="{{ url('/All-CAREERS') }}" onclick="window.location.href=this">Careers</a>
                     <ul>
                         <li class="dropdown"><a href="#">Internship </a>
             				<ul>
-            					<li><a href="online-internship.html">online internship</a></li>
-                                <li><a href="offline-internship.html"> Offline  internship</a></li>
-                                <li><a href="specialize-internship.html"> Specialize Internship</a></li>
-                                <li><a href="trusted-internship.html"> our trusted internship</a></li>		  
+            					<li><a href="{{ route('online.internship') }}">online internship</a></li>
+                      <li><a href="{{ route('offline.internship') }}"> Offline internship</a></li>
+                      <li><a href="{{ route('specialize.internship') }}"> Specialize Internship</a></li>
+                      <li><a href="{{ route('trusted.internship') }}"> our trusted internship</a></li>		  
             				</ul>
         				</li>
-                        <li><a href="vacancy.html">Vacancy</a></li>
+                        <li><a href="{{ url('/vacancy') }}">Vacancy</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="publicationwebstore.html" onclick="window.location.href=this">Publication & Webstore </a>
 				  <ul>
-    				<li><a href="Book-Publication.html"> Book Publication</a></li>
-    				<li><a href="publication.html">Articals publication</a></li>
+    				<li><a href="{{ url('/Book-Publication') }}"> Book Publication</a></li>
+    				<li><a href="{{ url('/Publication') }}">Articals publication</a></li>
     				<li><a href="publication.html">Verdict & Judgement</a></li>
 				  </ul>
 				</li>
@@ -122,7 +122,7 @@
   <div class="sticky-header">
     <div class="auto-container clearfix"> 
       <!--Logo-->
-      <div class="logo pull-left"> <a href="index.html" title=""><img src="{{ asset('frontend/images/logo-3-01.png') }}" alt="" title=""></a> </div>
+      <div class="logo pull-left"> <a href="{{ url('/') }}" title=""><img src="{{ asset('frontend/images/logo-3-01.png') }}" alt="" title=""></a> </div>
       <!--Right Col-->
       <div class="pull-right"> 
         <!-- Main Menu -->
@@ -150,7 +150,7 @@
     <div class="menu-backdrop"></div>
     <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
     <nav class="menu-box">
-      <div class="nav-logo"><a href="index.html"><img src="{{ asset('frontend/images/logo-3-01.png') }}" alt="" title=""></a></div>
+      <div class="nav-logo"><a href="{{ url('/') }}"><img src="{{ asset('frontend/images/logo-3-01.png') }}" alt="" title=""></a></div>
       <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
     </nav>
   </div>
