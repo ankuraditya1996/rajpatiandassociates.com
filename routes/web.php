@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\InternshipController;
 use App\Models\User;
+use App\Models\Articalpaymentstore;
 
 
 /*
@@ -142,10 +143,11 @@ Route::prefix('internship')->group(function(){
 });
 
 
-
-
-
-
+Route::prefix('publish-your-article')->group(function(){
+    Route::get('/view-artical-payment', [InternshipController::class, 'ViewArticalPayment'])->name('view.artical.payment');
+    Route::post('/artical-payment-store', [InternshipController::class, 'ArticalPaymentStore'])->name('artical.payment.store');
+    Route::get('/submit-article-view', [InternshipController::class, 'SubmitArticleView'])->name('view.artical.submit');
+});
 
 
 

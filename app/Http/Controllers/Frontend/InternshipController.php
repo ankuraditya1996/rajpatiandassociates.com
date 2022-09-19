@@ -8,6 +8,10 @@ use App\Models\Onlineinternship;
 use App\Models\Offlineinternship;
 use App\Models\Specializeinternship;
 use App\Models\Trustedinternship;
+use Auth;
+use App\Models\User;
+use App\Models\Articalpaymentstore;
+use Image;
 
 
 class InternshipController extends Controller
@@ -179,5 +183,58 @@ class InternshipController extends Controller
         );
         return redirect()->back()->with($notification);
     }//End Method
+
+    //////////////////Intern Dashboard Functions////////////////////
+
+    public function ViewArticalPayment()
+    {
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('intern.submit_artical_payment',compact('user'));
+    }
+
+    public function ArticalPaymentStore(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone_number' => 'required',
+            'refrence_no' => 'required',
+            'email' => 'required',
+            'screenshot' => 'required',
+        ],[
+            'name.required' => 'Please Enter Your Name',
+            'phone_number.required' => 'Please Enter Your Mobile Number',
+            'refrence_no.required' => 'Please Enter Refrence Number',
+            'email.required' => 'Please Enter Your email',
+            'screenshot.required' => 'Please Upload The Screenshot',
+
+        ]);
+
+        $image = $request->file('screenshot');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(500,500)->save('upload/payment_ss/'.$name_gen);
+        $save_url = 'upload/payment_ss/'.$name_gen;
+
+        Articalpaymentstore::insert([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'refrence_no' => $request->refrence_no,
+            'email' => $request->email,
+            'screenshot' => $save_url,
+        ]);
+
+         $notification = array(
+            'message' => 'Screenshot Updated Successfully, All the best with writing your article.',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('view.artical.submit')->with($notification);
+    }
+
+    public function SubmitArticleView()
+    {
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('intern.submit_artical',compact('user'));
+    }
 
 }

@@ -1,3 +1,7 @@
+@php 
+    $prefix = Request::route()->getPrefix();
+    $route = Route::current()->getName();
+@endphp
 <div class="horizontal-menu-wrapper">
         <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border container-xxl" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
             <div class="navbar-header">
@@ -14,12 +18,12 @@
                 <!-- include includes/mixins-->
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
 
-                    <li class="active nav-item"><a class="nav-link d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span data-i18n="Dashboards">Dashboards</span></a>
+                    <li class="{{ ($route == 'dashboard')? 'active':'' }} nav-item"><a class="nav-link d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span data-i18n="Dashboards">Dashboards</span></a>
                     </li>
 
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-bs-toggle="dropdown"><i data-feather='flag'></i><span data-i18n="Apps">Publish Your Artical</span></a>
+                    <li class="{{ ( $prefix == '/publish-your-article')? 'active':'' }} dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-bs-toggle="dropdown"><i data-feather='flag'></i><span data-i18n="Apps">Publish Your Artical</span></a>
                         <ul class="dropdown-menu" data-bs-popper="none">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="{{ url('/Coming-soon') }}" data-bs-toggle="" data-i18n="Submit Article"><i data-feather='file-text'></i><span data-i18n="Submit Articles">Submit Article</span></a>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="{{ route('view.artical.payment') }}" data-bs-toggle="" data-i18n="Submit Article"><i data-feather='file-text'></i><span data-i18n="Submit Articles">Submit Article</span></a>
                             </li>
 
                             <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="{{ url('/Coming-soon') }}" data-bs-toggle="" data-i18n="Approved Article" style="color: Green;"><i data-feather='file-text'></i><span data-i18n="Email">Approved Article</span></a>
