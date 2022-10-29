@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\InternshipController;
+use App\Http\Controllers\Backend\CareerController;
 use App\Models\User;
 use App\Models\Articalpaymentstore;
 
@@ -109,7 +110,36 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
     Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
-    Route::post('/admin/update/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
+    Route::post('/admin/update/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password'); 
+   
+/////////////////////////////////////////////////Admin Career\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    Route::get('/admin/online-internship', [CareerController::class, 'OnlineInternship'])->name('admin.onlineinternship');
+    Route::get('/delete/{id}', [CareerController::class, 'OnlineInternshipDataDel'])->name('onlineinternship.del');
+
+    Route::get('/admin/offline-internship', [CareerController::class, 'OfflineInternship'])->name('admin.offlineinternship');
+    Route::get('/delete/{id}', [CareerController::class, 'OfflineInternshipDataDel'])->name('offlineinternship.del');
+
+    Route::get('/admin/Specialize-internship', [CareerController::class, 'SpecializeInternship'])->name('admin.specializeinternship');
+    Route::get('/delete/{id}', [CareerController::class, 'SpecializeInternshipDataDel'])->name('specializeinternship.del');
+
+    Route::get('/admin/Trusted-internship', [CareerController::class, 'TrustedInternship'])->name('admin.trustedinternship');
+    Route::get('/delete/{id}', [CareerController::class, 'TrustedInternshipDataDel'])->name('trustedinternship.del');
+
+
+    /////////////////////////////////////////////Vacency\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    Route::prefix('vacancy')->group(function(){
+        Route::get('/post', [CareerController::class, 'VacancyView'])->name('vacnacy.view');
+    //Route::post('/store', [PartnerController::class, 'PartnerStore'])->name('partner.store');
+    //Route::get('/edit/{id}', [PartnerController::class, 'PartnerEdit'])->name('partner.edit');
+    //Route::post('/update', [PartnerController::class, 'PartnerUpdate'])->name('partner.update');
+    //Route::get('/delete/{id}', [PartnerController::class, 'PartnerDelete'])->name('partner.delete');
+
+   
+});
+/////////////////////////////////////////////////Admin Career\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
+   
 
 
 //USER ALL ROUTES

@@ -36,36 +36,62 @@
            <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center active" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
+                    <a class="d-flex align-items-center active" href="{{ url('/admin/dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate">Products</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='airplay'></i><span class="menu-title text-truncate">Quiz</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Add New Products</span></a>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Add Quiz</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">All Products</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Category</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Sub Category</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Sub Sub Category</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Brands</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Attributes</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Colors</span></a>
-                        </li>
-                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Product Reviews</span></a>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">View Quiz</span></a>
                         </li>
                     </ul>
                 </li>
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate">Sales</span></a>
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='file-text'></i><span class="menu-title text-truncate">Career</span></a>
                     <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Add Orders</span></a>
+                       <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">Internship Applicants</span></a>
+                            <ul class="menu-content">
+                                <li>
+                                    <a class="d-flex align-items-center" href="{{ route('admin.onlineinternship') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Online Internship</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="{{ route('admin.offlineinternship') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Offline Internship</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="{{ route('admin.specializeinternship') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Specialize Internship</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="{{ route('admin.trustedinternship') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Trusted Internship</span></a>
+                                </li>
+                            </ul>
                         </li>
+
+                        <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">Vacancy</span></a>
+                            <ul class="menu-content">
+                                <li>
+                                    <a class="d-flex align-items-center" href="{{ route('vacnacy.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Post Vacancy</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">View Posted Vacancy</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">View Applicants</span></a>
+                                </li>
+                             </ul>   
+                        </li>
+
                     </ul>
                 </li>
 
