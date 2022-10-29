@@ -131,13 +131,15 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
 
     Route::prefix('vacancy')->group(function(){
         Route::get('/post', [CareerController::class, 'VacancyView'])->name('vacnacy.view');
-    //Route::post('/store', [PartnerController::class, 'PartnerStore'])->name('partner.store');
-    //Route::get('/edit/{id}', [PartnerController::class, 'PartnerEdit'])->name('partner.edit');
-    //Route::post('/update', [PartnerController::class, 'PartnerUpdate'])->name('partner.update');
-    //Route::get('/delete/{id}', [PartnerController::class, 'PartnerDelete'])->name('partner.delete');
+        Route::post('/store', [CareerController::class, 'VacancyStore'])->name('vacnacy.store');
+        Route::get('/posted', [CareerController::class, 'PostedVacancy'])->name('vacnacy.posted');
+        Route::get('/delete/{id}', [CareerController::class, 'DeleteVacancy'])->name('vacancy.delete');
 
    
 });
+    /////////////////////////////////////////////View Vacacny On Frontend\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    Route::get('/vacancy', [InternshipController::class, 'VacancyViewOnFrontEnd']);
+
 /////////////////////////////////////////////////Admin Career\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
    
 

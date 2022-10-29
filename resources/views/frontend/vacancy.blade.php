@@ -33,12 +33,14 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($vacancyfrontview as $item)
     <tr>
-      <th scope="row">Legal Advisor</th>
-      <td>Full time legal advisor</td>
-      <td>03/02/2022</td>
-      <td><button type="button" class="btn btn-danger">Apply Now</button></td>
+      <th scope="row">{{ $item->job_title }}</th>
+      <td>{{ $item->job_discription }}</td>
+      <td>{{ $item->last_date }}</td>
+      <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ApplyNow">Apply Now</button></td>
     </tr>
+     @endforeach
   </tbody>
 </table>
         </div>
@@ -69,4 +71,49 @@
         </div>
     </section>
     <!-- End CTA Section -->
+
+    <!-- Apply Now Model -->
+    <div class="modal fade" id="ApplyNow">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+              <h5 class="modal-title">Apply Now</h5>
+              <button class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="title">Full Name</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="title">Email</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="title">Phone Number</label>
+                  <input type="text" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                  <label for="image">Upload Your CV</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="image">
+                    <label for="image" class="custom-file-label">Choose File</label>
+                  </div>
+                  <small class="form-text text-muted">Max Size 3mb</small>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- //Apply Now Model -->
 @endsection

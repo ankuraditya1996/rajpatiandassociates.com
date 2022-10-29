@@ -28,7 +28,8 @@
                <div class="col-md-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form form-horizontal">
+                            <form method="post" action="{{ route('vacnacy.store') }}">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="mb-1 row">
@@ -36,7 +37,7 @@
                                                 <label class="col-form-label" for="first-name">Job Title</label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="Job Title">
+                                                <input type="text" id="job-title" class="form-control" name="job_title" placeholder="Job Title">
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +47,7 @@
                                                 <label class="col-form-label" for="email-id">Job Description</label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" id="email-id" class="form-control" name="email-id" placeholder="Job Description">
+                                                <input type="text" id="Job-Description" class="form-control" name="job_discription" placeholder="Job Description">
                                             </div>
                                         </div>
                                     </div>
@@ -56,12 +57,12 @@
                                                 <label class="col-form-label" for="contact-info">Last Date</label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" id="contact-info" class="form-control" name="contact" placeholder="Last date of apply">
+                                                <input type="text" id="last-date" class="form-control" name="last_date" placeholder="Last date of apply">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-9 offset-sm-3">
-                                        <button type="reset" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
+                                        <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
                                         <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
                                     </div>
                                 </div>

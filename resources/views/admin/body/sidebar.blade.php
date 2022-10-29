@@ -84,7 +84,7 @@
                                     <a class="d-flex align-items-center" href="{{ route('vacnacy.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Post Vacancy</span></a>
                                 </li>
                                 <li>
-                                    <a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">View Posted Vacancy</span></a>
+                                    <a class="d-flex align-items-center" href="{{ route('vacnacy.posted') }}"><span class="menu-item text-truncate" data-i18n="Third Level">View Posted Vacancy</span></a>
                                 </li>
                                 <li>
                                     <a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">View Applicants</span></a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Onlineinternship;
 use App\Models\Offlineinternship;
@@ -12,6 +13,7 @@ use Auth;
 use App\Models\User;
 use App\Models\Articalpaymentstore;
 use Image;
+use App\Models\Vacancy;
 
 
 class InternshipController extends Controller
@@ -236,5 +238,15 @@ class InternshipController extends Controller
         $user = User::find($id);
         return view('intern.submit_artical',compact('user'));
     }
+
+////////////////////////////////////////////////////////// Next Function \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    public function VacancyViewOnFrontEnd()
+    {
+        $vacancyfrontview = DB::table('vacancies')->select('id','job_title','job_discription','last_date')->get();
+        return view('frontend.vacancy',compact('vacancyfrontview'));
+    }
+
+////////////////////////////////////////////////////////// Next Function \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 }
