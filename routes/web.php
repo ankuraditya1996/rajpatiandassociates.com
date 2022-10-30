@@ -77,10 +77,6 @@ Route::get('/trusted-internship', function () {
     return view('frontend.trusted-internship'); //trusted-internship
 });
 
-Route::get('/vacancy', function () {
-    return view('frontend.vacancy'); //vacancy
-});
-
 Route::get('/Book-Publication', function () {
     return view('frontend.book-publication'); //Book-Publication
 });
@@ -114,6 +110,7 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
    
 /////////////////////////////////////////////////Admin Career\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+    
     Route::get('/admin/online-internship', [CareerController::class, 'OnlineInternship'])->name('admin.onlineinternship');
     Route::get('/delete/{id}', [CareerController::class, 'OnlineInternshipDataDel'])->name('onlineinternship.del');
 
@@ -134,6 +131,7 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
         Route::post('/store', [CareerController::class, 'VacancyStore'])->name('vacnacy.store');
         Route::get('/posted', [CareerController::class, 'PostedVacancy'])->name('vacnacy.posted');
         Route::get('/delete/{id}', [CareerController::class, 'DeleteVacancy'])->name('vacancy.delete');
+        Route::get('/job-applicants', [CareerController::class, 'JobApplicants'])->name('job.applicants');
 
    
 });
@@ -157,6 +155,7 @@ Route::get('/user/profile', [IndexController::class, 'UserProfile'])->name('user
 Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])->name('user.profile.store');
 Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('intern.change.password');
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
+Route::post('/vacancy', [IndexController::class, 'VacacnyPage'])->name('view.vacancy');
 
 
 
@@ -172,8 +171,9 @@ Route::prefix('internship')->group(function(){
 
       Route::get('/Trusted-internship', [InternshipController::class, 'TrustedInternshipView'])->name('trusted.internship');
       Route::post('/submit-trusted-internship', [InternshipController::class, 'TrustedInternshipStore'])->name('trusted.internship.store');
-});
 
+      Route::post('/job', [InternshipController::class, 'SubmitJobApplicant'])->name('job.application.store');
+});
 
 Route::prefix('publish-your-article')->group(function(){
     Route::get('/view-artical-payment', [InternshipController::class, 'ViewArticalPayment'])->name('view.artical.payment');

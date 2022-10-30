@@ -56,7 +56,7 @@
                       <li><a href="{{ route('trusted.internship') }}"> our trusted internship</a></li>		  
             				</ul>
         				</li>
-                        <li><a href="{{ url('/vacancy') }}">Vacancy</a></li>
+                        <li><a href="{{ route('view.vacancy') }}">Vacancy</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="publicationwebstore.html" onclick="window.location.href=this">Publication & Webstore </a>

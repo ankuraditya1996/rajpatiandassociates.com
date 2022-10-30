@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\Articalpaymentstore;
 use Image;
 use App\Models\Vacancy;
+use App\Models\Jobapplicant;
 
 
 class InternshipController extends Controller
@@ -248,5 +249,34 @@ class InternshipController extends Controller
 
 ////////////////////////////////////////////////////////// Next Function \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+    public function SubmitJobApplicant(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone_number' => 'required',
+            'applying_for' => 'required',
+        ],[
+            'name.required' => 'This field is required. ',
+            'phone_number.required' => 'This field is required. ',
+            'applying_for.required' => 'This field is required. ',
+        ]);
 
+        Jobapplicant::insert([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'applying_for' => $request->applying_for,
+        ]);
+
+         $notification = array(
+            'message' => 'Form Submited Sucessfully, we will get back to you soon.',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('view.vacancy')->with($notification);
+    }
+////////////////////////////////////////////////////////// Next Function \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+     public function VacacnyPage()
+    {
+        return view('frontend.vacancy');
+    }//End Method   
 }

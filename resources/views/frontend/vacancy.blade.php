@@ -83,34 +83,41 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="title">Full Name</label>
-                  <input type="text" class="form-control">
-                </div>
+               <form method="post" action="{{ route('job.application.store') }}">
+                    @csrf
+                    <div class="form-group">
+                      <label for="title">Full Name</label>
+                      <input name="name" type="text" class="form-control">
+                    </div>
 
-                <div class="form-group">
-                  <label for="title">Email</label>
-                  <input type="text" class="form-control">
-                </div>
+                    <div class="form-group">
+                      <label for="title">Phone Number</label>
+                      <input  name="phone_number" type="text" class="form-control">
+                    </div>
 
-                <div class="form-group">
-                  <label for="title">Phone Number</label>
-                  <input type="text" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                  <label for="image">Upload Your CV</label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="image">
-                    <label for="image" class="custom-file-label">Choose File</label>
-                  </div>
-                  <small class="form-text text-muted">Max Size 3mb</small>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    <div class="form-group">
+                      <label for="title">Applying For : </label>
+                      <select name="applying_for">
+                        <option value="Selected Nothing">Select</option>
+                        @foreach($vacancyfrontview as $item)
+                        <option value="{{ $item->job_title }}">{{ $item->job_title }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="image">Upload Your CV</label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image">
+                        <label for="image" class="custom-file-label">Choose File</label>
+                      </div>
+                      <small class="form-text text-muted">Max Size 3mb</small>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>

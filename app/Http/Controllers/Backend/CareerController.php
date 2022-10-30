@@ -152,4 +152,12 @@ class CareerController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+////////////////////////////////////////////////////////// Next Function \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+     public function JobApplicants()
+    {
+        $jobapplicants = DB::table('jobapplicants')->select('id','name','applying_for','phone_number')->get();
+        return view('admin.job_applicants',compact('jobapplicants'));
+    }
+
 }
