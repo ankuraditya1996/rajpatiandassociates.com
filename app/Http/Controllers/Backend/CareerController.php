@@ -23,7 +23,7 @@ class CareerController extends Controller
    
     public function OnlineInternshipDataDel($id)
     {
-        $cardel = Onlineinternship::findOrFail($id);
+        $onlineinternship = Onlineinternship::findOrFail($id);
 
         Onlineinternship::findOrFail($id)->delete();
         $notification = array(

@@ -6,8 +6,11 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\InternshipController;
 use App\Http\Controllers\Backend\CareerController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Models\User;
 use App\Models\Articalpaymentstore;
+use App\Http\Controllers\Frontend\TeamFrontendController;
+
 
 
 /*
@@ -47,22 +50,6 @@ Route::get('/Property-Law', function () {
 
 Route::get('/About-Us', function () {
     return view('frontend.about'); //About
-});
-
-Route::get('/TRUSTED-PARTNERS', function () {
-    return view('frontend.partner'); //TRUSTED PARTNERS
-});
-
-Route::get('/Our-Team', function () {
-    return view('frontend.advocate'); //Our Core Team
-});
-
-Route::get('/HR-Administration', function () {
-    return view('frontend.administration'); //HR & Administration
-});
-
-Route::get('/Office-Assistant', function () {
-    return view('frontend.assistant'); //Office Assistant
 });
 
 Route::get('/Our-Team-All', function () {
@@ -112,16 +99,16 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
 
     
     Route::get('/admin/online-internship', [CareerController::class, 'OnlineInternship'])->name('admin.onlineinternship');
-    Route::get('/delete/{id}', [CareerController::class, 'OnlineInternshipDataDel'])->name('onlineinternship.del');
+    Route::get('/onlineinternship/delete/{id}', [CareerController::class, 'OnlineInternshipDataDel'])->name('onlineinternship.del');
 
     Route::get('/admin/offline-internship', [CareerController::class, 'OfflineInternship'])->name('admin.offlineinternship');
-    Route::get('/delete/{id}', [CareerController::class, 'OfflineInternshipDataDel'])->name('offlineinternship.del');
+    Route::get('/offline-internship/delete/{id}', [CareerController::class, 'OfflineInternshipDataDel'])->name('offlineinternship.del');
 
     Route::get('/admin/Specialize-internship', [CareerController::class, 'SpecializeInternship'])->name('admin.specializeinternship');
-    Route::get('/delete/{id}', [CareerController::class, 'SpecializeInternshipDataDel'])->name('specializeinternship.del');
+    Route::get('/specalize-internship/delete/{id}', [CareerController::class, 'SpecializeInternshipDataDel'])->name('specializeinternship.del');
 
     Route::get('/admin/Trusted-internship', [CareerController::class, 'TrustedInternship'])->name('admin.trustedinternship');
-    Route::get('/delete/{id}', [CareerController::class, 'TrustedInternshipDataDel'])->name('trustedinternship.del');
+    Route::get('/truted-internship/delete/{id}', [CareerController::class, 'TrustedInternshipDataDel'])->name('trustedinternship.del');
 
 
     /////////////////////////////////////////////Vacency\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -134,12 +121,38 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
         Route::get('/job-applicants', [CareerController::class, 'JobApplicants'])->name('job.applicants');
 
    
-});
+    });
     /////////////////////////////////////////////View Vacacny On Frontend\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     Route::get('/vacancy', [InternshipController::class, 'VacancyViewOnFrontEnd']);
 
-/////////////////////////////////////////////////Admin Career\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
+/////////////////////////////////////////////////Full Team Operation\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 
    
+   Route::prefix('Team')->group(function(){
+        Route::get('/view', [TeamController::class, 'PartnerView'])->name('partner.view');
+        Route::get('/add', [TeamController::class, 'PartnerAdd'])->name('partner.add');
+        Route::post('/store', [TeamController::class, 'PartnerStore'])->name('partner.store');
+        Route::get('/team/delete/{id}', [TeamController::class, 'DeletePartner'])->name('partner.delete');
+
+        Route::get('/associates/view', [TeamController::class, 'AssociatesView'])->name('associates.view');
+        Route::get('/asscoiates/add', [TeamController::class, 'AssociatesAdd'])->name('associates.add');  
+        Route::post('/associates/store', [TeamController::class, 'AssociatesStore'])->name('associate.store');  
+        Route::get('/associates/delete/{id}', [TeamController::class, 'DeleteAssociates'])->name('associates.delete'); 
+
+        Route::get('/hr-admin/view', [TeamController::class, 'HrAdminView'])->name('hradmin.view');
+        Route::get('/hr-admin/add', [TeamController::class, 'HrAdminAdd'])->name('hradmin.add');  
+        Route::post('/hr-admin/store', [TeamController::class, 'HrAdminStore'])->name('hradmin.store');  
+        Route::get('/hr-admin/delete/{id}', [TeamController::class, 'DeleteHrAdmin'])->name('hradmin.delete');  
+
+        Route::get('/office-assistant/view', [TeamController::class, 'OfficeAssView'])->name('officeass.view');
+        Route::get('/office-assistant/add', [TeamController::class, 'OfficeAssAdd'])->name('officeass.add');  
+        Route::post('/office-assistant/store', [TeamController::class, 'OfficeAssStore'])->name('officeass.store');  
+        Route::get('/office-assistant/delete/{id}', [TeamController::class, 'DeleteOfficeAss'])->name('officeass.delete');    
+    });
+
+   Route::get('/trusted-partner', [TeamFrontendController::class, 'PartnerFrontView'])->name('partner.front.view');
+   Route::get('/our-associates', [TeamFrontendController::class, 'AssociatesFrontView'])->name('associates.front.view');
+   Route::get('/hr-admin', [TeamFrontendController::class, 'HrAdminFrontView'])->name('hradmin.front.view');
+   Route::get('/office-assistant', [TeamFrontendController::class, 'OfficeAssistantFrontView'])->name('officeass.front.view');
 
 
 //USER ALL ROUTES

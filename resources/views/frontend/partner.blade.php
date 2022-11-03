@@ -25,14 +25,15 @@
                 <div class="sponsors-outer">
                     <!--Sponsors Carousel-->
                     <ul class="sponsors-carousel owl-carousel owl-theme">
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/1.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/2.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/3.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/4.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/1.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/2.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/3.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
-                        <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('frontend/images/clients/4.png') }}" alt="" style="box-shadow: 34px -16px teal;"></a></figure></li>
+                        @foreach($viewpartner as $item)
+                        <li class="slide-item">
+                            <figure class="image-box">
+                                <a href="#">
+                                    <img src="{{ asset($item->image) }}" alt="{{ $item->name }}" style="box-shadow: 34px -16px teal;">
+                                </a>
+                            </figure>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

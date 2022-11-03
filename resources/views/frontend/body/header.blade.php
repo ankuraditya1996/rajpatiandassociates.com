@@ -39,10 +39,10 @@
 
               <li class="dropdown"><a href="{{ url('/Our-Team-All') }}" onclick="window.location.href=this">Our Team</a>
                 <ul>
-                  <li><a href="{{ url('/TRUSTED-PARTNERS') }}">Partner </a></li>
-                  <li><a href="{{ url('/Our-Team') }}">Associates/ Our Experts Advocate </a></li>
-                  <li><a href="{{ url('/HR-Administration') }}">Human Resource & Administration </a></li>
-                  <li><a href="{{ url('/Office-Assistant') }}">Office Assistant </a></li>
+                  <li><a href="{{ route('partner.front.view') }}">Partner </a></li>
+                  <li><a href="{{ route('associates.front.view') }}">Associates/ Our Experts Advocate </a></li>
+                  <li><a href="{{ route('hradmin.front.view') }}">Human Resource & Administration </a></li>
+                  <li><a href="{{ route('officeass.front.view') }}">Office Assistant </a></li>
                 </ul>
               </li>
 				

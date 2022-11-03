@@ -6,7 +6,7 @@
         <div class="auto-container">
             <h1>OUR TEAM</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">home</a></li>
+                <li><a href="{{ url('/') }}">home</a></li>
                 <li>Our Team</li>
             </ul>
         </div>
@@ -23,7 +23,7 @@
                         <div class="inner-box">
                             <figure class="image-box">
                                 <img src="{{ asset('frontend/images/resource/partners.jpg') }}" alt="">
-                                <div class="link"><a href="partner.html"><i class="flaticon-link"></i></a></div>
+                                <div class="link"><a href="{{ route('partner.front.view') }}"><i class="flaticon-link"></i></a></div>
                                 <!--<div class="link"><a href="case-details.html"><i class="flaticon-link"></i></a></div>-->
                                 <div class="overlay-layer"></div>
                             </figure>
@@ -31,7 +31,7 @@
                                 <div class="box">
                                     <div class="icon-box"><i class="flaticon-notebook"></i></div>
                                     <p>Our Team</p>
-                                    <h4><a href="partner.html">Partners</a></h4>
+                                    <h4><a href="{{ route('partner.front.view') }}">Partners</a></h4>
                                 </div>
                                
                                 <!--<div class="link"><a href="#"><i class="flaticon-right"></i>Read More</a></div>-->
@@ -44,7 +44,7 @@
                         <div class="inner-box">
                             <figure class="image-box">
                                 <img src="{{ asset('frontend/images/resource/partners.jpg') }}" alt="">
-                                <div class="link"><a href="advocate.html"><i class="flaticon-link"></i></a></div>
+                                <div class="link"><a href="{{ route('associates.front.view') }}"><i class="flaticon-link"></i></a></div>
                                 <!--<div class="link"><a href="case-details.html"><i class="flaticon-link"></i></a></div>-->
                                 <div class="overlay-layer"></div>
                             </figure>
@@ -52,7 +52,7 @@
                                 <div class="box">
                                     <div class="icon-box"><i class="flaticon-notebook"></i></div>
                                     <p>Associates</p>
-                                    <h4><a href="advocate.html">Our Expert Advocates</a></h4>
+                                    <h4><a href="{{ route('associates.front.view') }}">Our Expert Advocates</a></h4>
                                 </div>
                                
                                 <!--<div class="link"><a href="#"><i class="flaticon-right"></i>Read More</a></div>-->
@@ -66,7 +66,7 @@
                         <div class="inner-box">
                             <figure class="image-box">
                                 <img src="{{ asset('frontend/images/resource/partners.jpg') }}" alt="">
-                                <div class="link"><a href="administration.html"><i class="flaticon-link"></i></a></div>
+                                <div class="link"><a href="{{ route('hradmin.front.view') }}"><i class="flaticon-link"></i></a></div>
                                 <!--<div class="link"><a href="case-details.html"><i class="flaticon-link"></i></a></div>-->
                                 <div class="overlay-layer"></div>
                             </figure>
@@ -74,7 +74,7 @@
                                 <div class="box">
                                     <div class="icon-box"><i class="flaticon-notebook"></i></div>
                                     <p>Human Resource</p>
-                                    <h4><a href="administration.html">Administration</a></h4>
+                                    <h4><a href="{{ route('hradmin.front.view') }}">Administration</a></h4>
                                 </div>
                                
                                 <!--<div class="link"><a href="#"><i class="flaticon-right"></i>Read More</a></div>-->
@@ -87,7 +87,7 @@
                         <div class="inner-box">
                             <figure class="image-box">
                                 <img src="{{ asset('frontend/images/resource/partners.jpg') }}" alt="">
-                                <div class="link"><a href="administration.html"><i class="flaticon-link"></i></a></div>
+                                <div class="link"><a href="{{ route('officeass.front.view') }}"><i class="flaticon-link"></i></a></div>
                                 <!--<div class="link"><a href="case-details.html"><i class="flaticon-link"></i></a></div>-->
                                 <div class="overlay-layer"></div>
                             </figure>
@@ -95,7 +95,7 @@
                                 <div class="box">
                                     <div class="icon-box"><i class="flaticon-notebook"></i></div>
                                     <p>Our Team</p>
-                                    <h4><a href="administration.html">Office Assistant</a></h4>
+                                    <h4><a href="{{ route('officeass.front.view') }}">Office Assistant</a></h4>
                                 </div>
                                
                                 <!--<div class="link"><a href="#"><i class="flaticon-right"></i>Read More</a></div>-->

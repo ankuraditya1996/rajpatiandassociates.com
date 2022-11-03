@@ -23,63 +23,21 @@
                 <h2>HR & Administration</h2>
             </div>
             <div class="row clearfix">
-                
+                @foreach($hrview as $item)
                 <!-- Team Block -->
                 <div class="team-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="{{ asset('frontend/images/resource/team-1.jpg') }}" alt="">
+                            <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
                         </div>
                         <div class="lower-box">
-                            <h5><a href="#">Chris JAriko</a></h5>
-                            <div class="designation">Founder and Ceo</div>
-                            <a class="arrow flaticon-right-arrow-3" href="{{ asset('frontend/images/resource/team-1.jpg') }}"></a>
+                            <h5><a href="#">{{ $item->name }}</a></h5>
+                            <div class="designation">{{ $item->designation }}</div>
+                            <a class="arrow flaticon-right-arrow-3" href="{{ asset($item->image) }}"></a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="150ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="{{ asset('frontend/images/resource/team-2.jpg') }}" alt="">
-                        </div>
-                        <div class="lower-box">
-                            <h5><a href="#">ALina Kevin</a></h5>
-                            <div class="designation">Senior Attorney</div>
-                            <a class="arrow flaticon-right-arrow-3" href="{{ asset('frontend/images/resource/team-2.jpg') }}"></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="{{ asset('frontend/images/resource/team-3.jpg') }}" alt="">
-                        </div>
-                        <div class="lower-box">
-                            <h5><a href="#">Senior Attorney</a></h5>
-                            <div class="designation">Junior Attorney</div>
-                            <a class="arrow flaticon-right-arrow-3" href="{{ asset('frontend/images/resource/team-3.jpg') }}"></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="450ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="{{ asset('frontend/images/resource/team-4.jpg') }}" alt="">
-                        </div>
-                        <div class="lower-box">
-                            <h5><a href="#">Polard Andrew</a></h5>
-                            <div class="designation">Financial Attorney</div>
-                            <a class="arrow flaticon-right-arrow-3" href="{{ asset('frontend/images/resource/team-4.jpg') }}"></a>
-                        </div>
-                    </div>
-                </div>
-                
+                @endforeach
             </div>
         </div>
     </section>

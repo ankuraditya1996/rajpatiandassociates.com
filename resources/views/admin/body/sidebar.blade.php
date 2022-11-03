@@ -43,6 +43,75 @@
                     <a class="d-flex align-items-center" href="{{ url('/admin/dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='users'></i><span class="menu-title text-truncate">Our Team</span></a>
+                    <ul class="menu-content">
+                       <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">Our Partners</span></a>
+                            <ul class="menu-content">
+                                <li class="{{ ( $route == 'partner.view')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('partner.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">View</span></a>
+                                </li>
+                                <li class="{{ ( $route == 'partner.add')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('partner.add') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Add</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">Associates/Advocate</span></a>
+                            <ul class="menu-content">
+                               <li class="{{ ( $route == 'associates.view')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('associates.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">View</span></a>
+                                </li>
+                               <li class="{{ ( $route == 'associates.add')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('associates.add') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Add</span></a>
+                                </li>
+                             </ul>   
+                        </li>
+
+                         <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">HR & Administration</span></a>
+                            <ul class="menu-content">
+                               <li class="{{ ( $route == 'hradmin.view')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('hradmin.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">View</span></a>
+                                </li>
+                               <li class="{{ ( $route == 'hradmin.add')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('hradmin.add') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Add</span></a>
+                                </li>
+                             </ul>   
+                        </li>
+
+                         <li class="has-sub" style="">
+                        <a class="d-flex align-items-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">Office Assistant</span></a>
+                            <ul class="menu-content">
+                               <li class="{{ ( $route == 'officeass.view')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('officeass.view') }}"><span class="menu-item text-truncate" data-i18n="Third Level">View</span></a>
+                                </li>
+                               <li class="{{ ( $route == 'officeass.add')? 'active':'' }}">
+                                    <a class="d-flex align-items-center" href="{{ route('officeass.add') }}"><span class="menu-item text-truncate" data-i18n="Third Level">Add</span></a>
+                                </li>
+                             </ul>   
+                        </li>
+
+                    </ul>
+                </li>
+
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='file-text'></i><span class="menu-title text-truncate">Career</span></a>
                     <ul class="menu-content">
                        <li class="has-sub" style="">
@@ -89,7 +158,17 @@
                     </ul>
                 </li>
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='users'></i><span class="menu-title text-truncate">Customers</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='hash'></i><span class="menu-title text-truncate">Important Links</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">View</span></a>
+                        </li>
+
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Add</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--<li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='users'></i><span class="menu-title text-truncate">Customers</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Customer List</span></a>
                         </li>
@@ -113,7 +192,7 @@
                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate">Reports</span></a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
 
                 <li class=" nav-item"><a class="d-flex align-items-center" href="app-file-manager.html"><i data-feather="save"></i><span class="menu-title text-truncate">File Manager</span></a>
                 </li>

@@ -31,8 +31,8 @@
                                 <div class="footer-widget links-widget">
 									<h5>Useful links</h5>
 									<ul class="footer-list">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="about.html">About Us</a></li>
+										<li><a href="{{ url('/') }}">Home</a></li>
+										<li><a href="{{ url('/About-Us') }}">About Us</a></li>
 											<li><a href="service.html">Our Services</a></li>
 										<li><a href="gallery.html">Gallery</a></li>
 									
